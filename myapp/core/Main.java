@@ -1,37 +1,79 @@
 package myapp.core;
 
-public class Main {
+import java.io.Console;
+import java.nio.file.AtomicMoveNotSupportedException;
+import java.io.Console;
+
+
+public class Main extends bank {
+    
 
     public static void main(String[] args) {
-       // Instantiate a car
-          Car myCar = new Car();
-          myCar.setColour("red");
-        //  myCar.colour = "red";
-        //  myCar.make = "honda";
-         // myCar.engineCapacity =2000;
 
-          myCar.start();
+      String input;
+      String deposit;
+      int amount;
+      String withdrawal;
 
-          System.out.printf("The colour of my car is %S\n", myCar.getColour());
-
-          myCar.setColour("bue")
-          System.out.printf("changed of my car is %S\n", myCar.getColour());
+      bank bank = new bank();
 
 
-          //instantiate another car
-          Car myothercar = new Car();
-          myothercar.colour = "silver";
-          myothercar.make = "subaru";
-          myothercar.engineCapacity =2500;
+      Console cons = System.console();
+      input = cons.readLine("Deposit or Withdrawal: \n");
+      
+      String[] terms = input.split(" ");
+      //System.out.printf("%s", terms[0].toUpperCase());
+      //terms[0].toUpperCase();
 
-          myothercar.stop()
+      if(terms[0].equals("Deposit")){
+
+        deposit = cons.readLine("How much: $\n");
+
+        amount = Integer.parseInt(deposit);
+
+             bank.getdeposit(amount);
+
+        System.out.printf("%d", amount);
 
 
-;
+
+
+
+
+
+
+
+      }
+
+      else if (terms[0].equals("Withdrawl")){
+
+        withdrawal = cons.readLine("How much: $\n");
+        amount = Integer.parseInt(withdrawal);
+
+
+                
+
+
+        System.out.printf("how much lool ");
+
+
+      }
+
+
+
+
+
+
+      
+
+
 
 
 
 
     }
+
+
     
-}
+
+  }
